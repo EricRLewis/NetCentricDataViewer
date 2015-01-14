@@ -1,0 +1,181 @@
+/*
+ * Project 2 assignment solution.
+ * CSS code.
+ *
+ * author Eric Lewis
+ * version 1
+ */
+
+body {
+  margin: 0;
+  background-color: grey;
+}
+
+div {
+  margin: 0;
+  background-color: #DDDDDD;
+}
+
+#content {
+    width: 800px;
+    height: 790px;
+    display: flex;
+}
+
+#row1 {
+    width: 800px;
+    height: 50%;
+    display: flex;
+    flex: 1 1 0;
+}
+
+#row2 {
+    position: absolute;
+    top: 410px;
+    left: 0px;
+    width: 800px;
+//    height: 395px;
+    display: flex;
+    resize: vertical;
+}
+
+#tableholder, #chartholder2 {
+	background-color: #DDDDDD;
+    width: 50%;
+    resize: horizontal;
+}
+
+#chartholder, #chartholder3 {
+	background-color: #DDDDDD;
+    flex: 1 1 0;
+    display: flex;
+}
+
+#chart, #chart2, #chart3 {
+  width: 100%;
+}
+
+#table {
+  width: 100%;
+}
+
+th {
+  background-color: yellow;
+}
+
+td {
+  background-color: #DDDDDD;
+}
+
+#toolbar, #toolbar2, #toolbar3 {
+	height: 20px;
+	width: 100%;
+	background-color: #DDDDDD;
+    overflow: auto;
+}
+
+#dimension, #dimension2, #dimension3 {
+	height: 20px;
+	width: 80%;
+	background-color: #DDDDDD;
+}
+
+input[type="color"] {
+	width: 50px;
+	height: 16px;
+}
+
+select {
+  margin: 0;
+}
+
+#tableholder, #chartholder, #chartholder2, #chartholder3 {
+    outline: solid 0px #ccc;
+    overflow: auto;
+}
+
+#canvas, #canvas2, #canvas3 {
+  margin: 0;
+  background: white;
+  overflow: auto;
+  height: 345px;
+  width: 100%;
+}
+
+#canvas2 {
+  background: white;
+}
+
+#canvas3 {
+  background: white;
+}
+
+nav {
+  background-color: #DDDDDD;
+  height: 20px;
+  width: 800px
+}
+
+nav ul {
+  font-family: Arial;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+nav ul li {
+  display: block;
+  position: relative;
+  float: left;
+}
+ 
+nav ul li:hover {
+  background: #DDDDDD;
+}
+ 
+nav li ul {
+  display: none;
+}
+ 
+nav li {
+  display: block;
+  text-decoration: none;
+  padding: 0;
+  background: #DDDDDD;
+  color: black; 
+  padding-left: 3px;
+  padding-top: 3px;
+  white-space: nowrap;
+  height: 17px;
+  width: 30px;
+  text-align: left;
+ 
+}
+ 
+nav li:hover ul {
+  display: block;
+  position: absolute;
+  height:30px;
+}
+ 
+nav li:hover li {
+  float: none;
+  font-size: 14px;
+  width: 50px;
+}
+ 
+nav li:hover a {
+  background: #DDDDDD;
+  color: black;
+  text-decoration: none;
+  height:30px;
+}
+ 
+nav li:hover li a:hover {
+  background: 0xCCCCCC;
+}
+ 
+nav ul li ul li a {
+  text-align:left;
+}

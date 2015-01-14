@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<!--
+ Project 2 assignment solution.
+ HTML code.
+
+ author Eric Lewis
+ version 1
+-->
+
+<html>
+
+<head>
+  <title>PR2: airshp12</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="PR2.css">
+  <script src ="PR2.js"></script>
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    precision highp float;
+    attribute vec4 vPosition;
+    uniform int pointSize;
+    uniform float scaleX;
+    uniform float scaleY;
+    uniform float translationX;
+    uniform float translationY;
+    uniform vec4 color;
+    varying vec4 vColor;
+    void main(void) {
+      gl_Position = vec4(vPosition.x * scaleX + translationX, vPosition.y * scaleY + translationY, 0.0, 1.0);
+      gl_PointSize = float(pointSize);
+      vColor = color;
+    }
+  </script>
+  <script id="fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+    varying vec4 vColor;
+    void main(void) {
+      gl_FragColor = vColor;
+    }
+  </script>
+</head>
+
+<body>
+
+<nav id="menubar">
+  <ul>
+    <li>File
+      <ul>
+        <li><a href="javascript:open()">Open</a></li>
+        <li><a href="javascript:close()">Close</a></li>
+        <li><a href="javascript:save()">Save</a></li>
+        <li><a href="javascript:quit()">Quit</a></li>
+      </ul>
+    </li>
+    <li>Edit
+      <ul>
+        <li><a href="javascript:copy()">Copy</a></li>
+        <li><a href="javascript:paste()">Paste</a></li>
+      </ul>
+    </li>
+    <li>Help
+      <ul>
+        <li><a href="javascript:about()">About</a></li>
+      </ul>
+    </li>         
+  </ul>
+</nav>
+
+<section id="content">
+  <div id="row1">
+    <div id="tableholder"> 
+    </div> 
+    <div id="chartholder">
+      <div id="chart">
+        <div id="toolbar">
+          <select id="pointsize">
+            <option id="1">1</option>
+            <option id="2">2</option>
+            <option id="3">3</option>
+            <option id="4">4</option>
+            <option id="5">5</option>
+            <option id="6">6</option>
+            <option id="7">7</option>
+            <option id="8">8</option>
+            <option id="9">9</option>
+            <option id="10">10</option>
+          </select>
+          <input id="backgroundcolor" type="color" />
+          <input id="foregroundcolor" type="color" />
+          <input id="selectioncolor" type="color" />
+          <select id="charttype">
+            <option id="scatter">Scatter Plot</option>
+            <option id="line">Line Plot</option>
+            <option id="histogram">Histogram</option>
+          </select>
+        </div>
+        <canvas id="canvas" oncontextmenu="return false;">
+ Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.
+        </canvas>
+        <div id="dimension">
+          <select id="x" onChange = "display()">
+          </select>
+          <select id="y" onChange = "display()">
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="row2">
+    <div id="chartholder2">
+      <div id="chart2">
+        <div id="toolbar2">
+          <select id="pointsize2">
+            <option id="1">1</option>
+            <option id="2">2</option>
+            <option id="3">3</option>
+            <option id="4">4</option>
+            <option id="5">5</option>
+            <option id="6">6</option>
+            <option id="7">7</option>
+            <option id="8">8</option>
+            <option id="9">9</option>
+            <option id="10">10</option>
+          </select>
+          <input id="backgroundcolor2" type="color" />
+          <input id="foregroundcolor2" type="color" />
+          <input id="selectioncolor2" type="color" />
+          <select id="charttype2">
+            <option id="scatter2">Scatter Plot</option>
+            <option id="line2">Line Plot</option>
+            <option id="histogram2">Histogram</option>
+          </select>
+        </div>
+        <canvas id="canvas2" oncontextmenu="return false;">
+ Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.
+        </canvas>
+        <div id="dimension2">
+          <select id="x2" onChange = "display()">
+          </select>
+          <select id="y2" onChange = "display()">
+          </select>
+        </div>
+       </div>
+     </div>
+    <div id="chartholder3">
+      <div id="chart3">
+        <div id="toolbar3">
+          <select id="pointsize3">
+            <option id="1">1</option>
+            <option id="2">2</option>
+            <option id="3">3</option>
+            <option id="4">4</option>
+            <option id="5">5</option>
+            <option id="6">6</option>
+            <option id="7">7</option>
+            <option id="8">8</option>
+            <option id="9">9</option>
+            <option id="10">10</option>
+          </select>
+          <input id="backgroundcolor3" type="color" />
+          <input id="foregroundcolor3" type="color" />
+          <input id="selectioncolor3" type="color" />
+          <select id="charttype3">
+            <option id="scatter3">Scatter Plot</option>
+            <option id="line3">Line Plot</option>
+            <option id="histogram3">Histogram</option>
+          </select>
+        </div>
+        <canvas id="canvas3" oncontextmenu="return false;">
+ Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.
+        </canvas>
+        <div id="dimension3">
+          <select id="x3" onChange = "display()">
+          </select>
+          <select id="y3" onChange = "display()">
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </id>
+</section>
+
+<input style="display:none;" id="fileDialog" type="file" />
+
+</body>
+
+</html>
